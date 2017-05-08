@@ -1,3 +1,14 @@
 <section class="intro-section">
   <squarespace:block-field id="intro-text" columns="12"/>
 </section>
+
+<section class="topics-section">
+  <squarespace:query collection="topics" limit="5">
+    {.repeated section items}
+    <div class="topic">
+      <h2>{title}</h2>
+      <p>{body}</p>
+    </div>
+    {.end}
+  </squarespace:query>
+</section>
