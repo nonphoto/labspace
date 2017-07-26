@@ -1,3 +1,5 @@
+import physics from '@nonphoto/physics'
+
 const canvas = document.getElementById('intro-canvas')
 const context = canvas.getContext('2d')
 
