@@ -1,0 +1,18 @@
+{
+  "name": "labspace",
+  "version": "1.0.0",
+  "description": "A custom Squarespace template for Labspace.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://labspace-blog.squarespace.com/template.git"
+  },
+  "author": "Jonas Luebbers",
+  "license": "Unlicense",
+  "dependencies": {
+
+  }
+}
