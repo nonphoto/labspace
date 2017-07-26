@@ -2,9 +2,17 @@
   "name": "labspace",
   "version": "1.0.0",
   "description": "A custom Squarespace template for Labspace.",
-  "main": "index.js",
+  "main": "template.conf",
+  "config": {
+    "destination_dir": "dist",
+    "source_dir": "src"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "assemble": "squarespace assemble --directory $npm_package_config_source_dir --output $npm_package_config_destination_dir --omit styles --noclean",
+    "assemble:watch": "npm run assemble -- --watch",
+    "scripts": "webpack --config webpack.config.js",
+    "scripts:watch": "npm run scripts -- --watch",
+    "watch": "npm-run-all --parallel *:watch"
   },
   "repository": {
     "type": "git",
@@ -12,7 +20,9 @@
   },
   "author": "Jonas Luebbers",
   "license": "Unlicense",
-  "dependencies": {
-
+  "dependencies": {},
+  "devDependencies": {
+    "@squarespace/server": "^1.1.1",
+    "@squarespace/toolbelt": "^0.8.4"
   }
 }
