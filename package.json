@@ -8,10 +8,11 @@
     "source_dir": "src"
   },
   "scripts": {
-    "assemble": "squarespace assemble --directory $npm_package_config_source_dir --output $npm_package_config_destination_dir --omit styles --noclean",
+    "assemble": "squarespace assemble --directory $npm_package_config_source_dir --output $npm_package_config_destination_dir --noclean",
     "assemble:watch": "npm run assemble -- --watch",
     "scripts": "webpack --config webpack.config.js",
     "scripts:watch": "npm run scripts -- --watch",
+    "server": "squarespace runserver --auth --directory=$npm_package_config_destination_dir",
     "watch": "npm-run-all --parallel *:watch"
   },
   "repository": {
@@ -23,6 +24,8 @@
   "dependencies": {},
   "devDependencies": {
     "@squarespace/server": "^1.1.1",
-    "@squarespace/toolbelt": "^0.8.4"
+    "@squarespace/toolbelt": "^0.8.4",
+    "npm-run-all": "^4.0.2",
+    "webpack": "^3.4.1"
   }
 }

@@ -22,7 +22,7 @@
     </footer>
   </div>
 
-  <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+  <squarespace:script src="main.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 
   {squarespace-footers}
 </body>
