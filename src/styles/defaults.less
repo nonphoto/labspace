@@ -2,8 +2,15 @@
 
 html {
   font-size: 16px;
-  // font-size: 22px;
-  font-family: 'Roboto', sans-serif
+  font-family: 'Roboto', sans-serif;
+
+  @media @phone-lg {
+    font-size: 20px;
+  }
+
+  @media @tablet-lg {
+    font-size: 22px;
+  }
 }
 
 body {
@@ -26,6 +33,7 @@ h2 {
   position: relative;
   box-sizing: border-box;
   padding: 2 * @page-margin;
+  padding-top: 2.5 * @page-margin;
 }
 
 #intro-canvas {
