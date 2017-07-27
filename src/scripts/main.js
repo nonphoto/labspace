@@ -19,16 +19,16 @@ function createRandomForce() {
     return [dx, dy]
 }
 
-const circleA = new physics.Circle(-40, -40, 24)
+const circleA = new physics.Circle(-30, -30, 24, '#A454ED')
 circleA.applyForce(createRandomForce())
 
-const circleB = new physics.Circle(40, 40, 20)
+const circleB = new physics.Circle(30, 30, 20, '#37C1FF')
 circleB.applyForce(createRandomForce())
 
-const rectA = new physics.Rect(40, -40, 18, 18)
+const rectA = new physics.Rect(30, -30, 18, 18, '#ED523B')
 rectA.applyForce(createRandomForce())
 
-const rectB = new physics.Rect(-40, 40, 16, 16)
+const rectB = new physics.Rect(-30, 30, 16, 16, '#FFE548')
 rectB.applyForce(createRandomForce())
 
 const entities = [circleA, circleB, rectA, rectB]
@@ -68,7 +68,7 @@ function stop() {
 function draw() {
     context.clearRect(-halfWidth, -halfHeight, width, height)
 
-    context.fillStyle = '#0000ff'
+    context.fillStyle = '#3D45E0'
     context.fillRect(-halfWidth, -halfHeight, width, height)
 
     entities.forEach((entity) => {entity.needsUpdate = true})

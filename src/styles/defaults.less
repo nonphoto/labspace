@@ -1,17 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html {
+  font-size: 22px;
+  font-family: 'Roboto', sans-serif
+}
+
+body {
+  background-color: white;
+  color: black;
+  padding: 3vw;
+}
+
 .intro-section {
   position: relative;
   box-sizing: border-box;
-  background: black;
-  color: white;
   font-size: 4rem;
   padding: 10%;
-  font-family: 'Pantograph', sans-serif;
+  font-family: 'Pantograph', 'Roboto', sans-serif;
 }
 
 #intro-canvas {
   position: absolute;
   top: 0;
   left: 0;
+  background-color: #3D45E0;
   width: 100%;
   height: 100%;
+}
+
+.event-section,
+.blog-section {
+  padding: 5vw;
+
+  p {
+    letter-spacing: 0.05ch;
+    line-height: 1.3em;
+  }
+}
+
+
+h2 {
+  font-family: 'Pantograph', sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
 }
