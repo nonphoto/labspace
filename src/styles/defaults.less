@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 html {
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Roboto', sans-serif;
 
   @media @phone-lg {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   @media @tablet-lg {
@@ -16,6 +16,7 @@ html {
 body {
   background-color: @white;
   color: @black;
+  margin: @page-margin;
 }
 
 h1 {
@@ -31,18 +32,17 @@ h2 {
 
   position: relative;
   box-sizing: border-box;
-  margin: @page-margin;
   padding: 2 * @page-margin;
   padding-top: 2.5 * @page-margin;
 
   @media @desktop-xxl {
-    padding: 200px;
+    padding: 100px;
   }
 }
 
 #intro-text {
   max-width: 14em;
-  margin: auto;
+  // margin: auto;
 }
 
 #intro-canvas {
@@ -56,11 +56,65 @@ h2 {
 
 .event-section,
 .blog-section {
-  margin: 2 * @page-margin;
-
+  margin: (2 * @page-margin) 0;
 
   p {
     .mixin-p();
+  }
+}
+
+.event-section {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.event-item {
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  padding-right: @page-margin;
+
+  .item-tag {
+    text-align: center;
+    width: 3 * @page-margin;
+    min-width: 6em;
+
+    .circle {
+      font-size: 0.8em;
+      margin-bottom: 0.1em;
+    }
+  }
+
+  .item-text {
+    position: relative;
+    margin: 0;
+    padding: 1.6em 0;
+    width: 100%;
+
+    h2 {
+      margin: 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: @line-width;
+      border-radius: @line-width / 2;
+      background-color: @black;
+
+      @media @phone-lg {
+        height: @line-width-large;
+        border-radius: @line-width-large / 2;
+      }
+    }
+  }
+
+  &:first-of-type .item-text::after {
+    display: none;
   }
 }
 

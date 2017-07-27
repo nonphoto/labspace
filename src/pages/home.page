@@ -7,8 +7,14 @@
   <squarespace:query collection="events" limit="5">
     {.repeated section items}
     <div class="event-item">
-      <h2>{title}</h2>
-      <p>{body}</p>
+      <div class="item-tag">
+        {.equal?:@index:2}Next Up{.or}
+        <span class="circle">●</span>
+        {.end}
+      </div>
+      <div class="item-text">
+        <h2>{title}</h2>
+      </div>
     </div>
     {.end}
   </squarespace:query>
