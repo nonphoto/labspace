@@ -1,4 +1,5 @@
 import physics from '@nonphoto/physics'
+import _ from 'lodash'
 
 const canvas = document.getElementById('intro-canvas')
 const context = canvas.getContext('2d')
@@ -89,7 +90,11 @@ function update(entity) {
     entity.draw(context)
 }
 
+function handleResizeEnd() {
+    calculateCanvasDimensions()
+}
 
+window.addEventListener('resize', _.debounce(handleResizeEnd, 500))
 
 setTimeout(function() {
     calculateCanvasDimensions()
