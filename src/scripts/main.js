@@ -3,14 +3,54 @@ import physics from '@nonphoto/physics'
 const canvas = document.getElementById('intro-canvas')
 const context = canvas.getContext('2d')
 
-const scale = window.devicePixelRatio || 1
-canvas.width = canvas.clientWidth * scale
-canvas.height = canvas.clientHeight * scale
-context.scale(scale, scale)
+const speed = 0.2
+const width = 100
+const height = 100
+const halfWidth = width / 2
+const halfHeight = height / 2
 
 let animationRequest = null
 
-const entities = []
+
+
+function createRandomForce() {
+    const dx = (Math.random() * speed * 2) - speed
+    const dy = (Math.random() * speed * 2) - speed
+    return [dx, dy]
+}
+
+const circleA = new physics.Circle(-40, -40, 24)
+circleA.applyForce(createRandomForce())
+
+const circleB = new physics.Circle(40, 40, 20)
+circleB.applyForce(createRandomForce())
+
+const rectA = new physics.Rect(40, -40, 18, 18)
+rectA.applyForce(createRandomForce())
+
+const rectB = new physics.Rect(-40, 40, 16, 16)
+rectB.applyForce(createRandomForce())
+
+const entities = [circleA, circleB, rectA, rectB]
+
+entities.push(new physics.Line(-halfWidth, 0, 1, 0))
+entities.push(new physics.Line(halfWidth, 0, -1, 0))
+entities.push(new physics.Line(0, -halfHeight, 0, 1))
+entities.push(new physics.Line(0, halfHeight, 0, -1))
+
+
+
+function calculateCanvasDimensions() {
+    const deviceScale = window.devicePixelRatio || 1
+    canvas.width = canvas.clientWidth * deviceScale
+    canvas.height = canvas.clientHeight * deviceScale
+
+    const horizontalScale = canvas.width / width
+    const verticalScale = canvas.height / height
+    const scale = Math.max(horizontalScale, verticalScale) * deviceScale
+    context.translate(canvas.width / 2, canvas.height / 2)
+    context.scale(scale, scale)
+}
 
 function start() {
     if (!animationRequest) {
@@ -26,12 +66,32 @@ function stop() {
 }
 
 function draw() {
-    context.clearRect(0, 0, canvas.width, canvas.height)
+    context.clearRect(-halfWidth, -halfHeight, width, height)
 
     context.fillStyle = '#0000ff'
-    context.fillRect(0, 0, canvas.width, canvas.height)
+    context.fillRect(-halfWidth, -halfHeight, width, height)
+
+    entities.forEach((entity) => {entity.needsUpdate = true})
+    entities.forEach((entity) => {update(entity)})
 
     animationRequest = requestAnimationFrame(draw)
 }
 
-start()
+function update(entity) {
+    entities.forEach((pairedEntity) => {
+        if (pairedEntity.needsUpdate && pairedEntity !== entity) {
+            const manifold = entity.collide(pairedEntity)
+            physics.resolveCollision(manifold)
+        }
+    })
+
+    entity.needsUpdate = false
+    entity.draw(context)
+}
+
+
+
+setTimeout(function() {
+    calculateCanvasDimensions()
+    start()
+}, 1000)
