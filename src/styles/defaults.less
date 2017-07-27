@@ -16,7 +16,6 @@ html {
 body {
   background-color: @white;
   color: @black;
-  padding: @page-margin;
 }
 
 h1 {
@@ -32,8 +31,18 @@ h2 {
 
   position: relative;
   box-sizing: border-box;
+  margin: @page-margin;
   padding: 2 * @page-margin;
   padding-top: 2.5 * @page-margin;
+
+  @media @desktop-xxl {
+    padding: 200px;
+  }
+}
+
+#intro-text {
+  max-width: 14em;
+  margin: auto;
 }
 
 #intro-canvas {
@@ -47,7 +56,7 @@ h2 {
 
 .event-section,
 .blog-section {
-  padding: @page-margin;
+  margin: 2 * @page-margin;
 
 
   p {
