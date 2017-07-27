@@ -20,16 +20,16 @@ function createRandomForce() {
     return [dx, dy]
 }
 
-const circleA = new physics.Circle(-30, -30, 24, '#A454ED')
+const circleA = new physics.Circle(-30, -30, 30, '#A454ED')
 circleA.applyForce(createRandomForce())
 
-const circleB = new physics.Circle(30, 30, 20, '#37C1FF')
+const circleB = new physics.Circle(30, 30, 24, '#37C1FF')
 circleB.applyForce(createRandomForce())
 
-const rectA = new physics.Rect(30, -30, 18, 18, '#ED523B')
+const rectA = new physics.Rect(30, -30, 24, 24, '#ED523B')
 rectA.applyForce(createRandomForce())
 
-const rectB = new physics.Rect(-30, 30, 16, 16, '#FFE548')
+const rectB = new physics.Rect(-30, 30, 20, 20, '#FFE548')
 rectB.applyForce(createRandomForce())
 
 const entities = [circleA, circleB, rectA, rectB]
@@ -48,7 +48,7 @@ function calculateCanvasDimensions() {
 
     const horizontalScale = canvas.width / width
     const verticalScale = canvas.height / height
-    const scale = Math.max(horizontalScale, verticalScale) * deviceScale
+    const scale = Math.max(horizontalScale, verticalScale)
     context.translate(canvas.width / 2, canvas.height / 2)
     context.scale(scale, scale)
 }
