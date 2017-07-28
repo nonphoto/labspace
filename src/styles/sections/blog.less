@@ -32,28 +32,33 @@
         margin: 0;
     }
 
-    p {
+    .excerpt {
         position: relative;
-        margin-top: 1.6em;
+        margin-top: 1rem;
         margin-bottom: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
 
         &::after{
-        content:'';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 5em;
-        width: 100%;
+            content:'';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 5rem;
+            width: 100%;
         }
+    }
+
+    .author {
+        margin-top: 1rem;
     }
 
     &:nth-child(1) {
         background-color: @purple;
         transform: rotate(0.04rad);
 
-        p::after {
+        &:hover {}
+
+        .excerpt::after {
         background: linear-gradient(transparent, @purple);
         }
     }
@@ -62,7 +67,7 @@
         background-color: @cyan;
         transform: rotate(-0.07rad);
 
-        p::after {
+        .excerpt::after {
         background: linear-gradient(transparent, @cyan);
         }
     }
@@ -71,7 +76,7 @@
         background-color: @red;
         transform: rotate(0.05rad);
 
-        p::after {
+        .excerpt::after {
         background: linear-gradient(transparent, @red);
         }
     }
@@ -80,7 +85,7 @@
         background-color: @yellow;
         transform: rotate(-0.02rad);
 
-        p::after {
+        .excerpt::after {
         background: linear-gradient(transparent, @yellow);
         }
     }

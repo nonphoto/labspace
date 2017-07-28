@@ -26,7 +26,8 @@
     {.repeated section items}
     <div class="blog-item">
       <h2>{title}</h2>
-      {excerpt}
+      <div class="excerpt">{excerpt}</div>
+      <div class="author">{author.displayName} on <span data-date="{publishOn}"></span></div>
     </div>
     {.end}
   </squarespace:query>
