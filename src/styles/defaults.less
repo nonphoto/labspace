@@ -30,3 +30,32 @@ h1 {
 h2 {
 	.mixin-h2();
 }
+
+footer {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 2 * @page-margin;
+	padding-bottom: @page-margin;
+	width: 100%;
+
+	@media @desktop-xxl {
+		padding-top: @page-margin;
+		padding-bottom: 0;
+	}
+
+	a {
+		padding: 1rem;
+	}
+
+	svg {
+		@media @phone-md {
+			transform: scale(1.6);
+		}
+
+		@media @tablet {
+			transform: scale(2);
+		}
+	}
+}

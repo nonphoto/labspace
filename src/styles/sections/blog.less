@@ -20,7 +20,7 @@
 
     background-color: @light-gray;
 
-    @media @phone-lg {
+    @media @tablet {
         max-width: 50%;
     }
 
@@ -35,21 +35,25 @@
     .excerpt {
         position: relative;
         margin-top: 1rem;
-        margin-bottom: 0;
+        margin-bottom: 1rem;
         overflow: hidden;
+
+        p {
+            margin: 0;
+        }
 
         &::after{
             content:'';
             position: absolute;
             left: 0;
             bottom: 0;
-            height: 5rem;
+            height: 6rem;
             width: 100%;
         }
     }
 
     .author {
-        margin-top: 1rem;
+        margin-top: auto;
     }
 
     &:nth-child(1) {

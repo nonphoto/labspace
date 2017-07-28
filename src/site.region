@@ -18,7 +18,9 @@
     </main>
 
     <footer>
-
+      <a href="https://www.squarespace.com">
+        {@|apply logo.block}
+      </a>
     </footer>
   </div>
 
