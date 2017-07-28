@@ -1,6 +1,11 @@
 import physics from '@nonphoto/physics'
 import _ from 'lodash'
 
+const months = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+]
+
 const canvas = document.getElementById('intro-canvas')
 const context = canvas.getContext('2d')
 
@@ -95,6 +100,14 @@ function handleResizeEnd() {
 }
 
 window.addEventListener('resize', _.debounce(handleResizeEnd, 500))
+
+const dateElements = Array.from(document.querySelectorAll('[data-date]'))
+dateElements.forEach(function(dateElement) {
+    const date = new Date(Number(dateElement.dataset.date))
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+    dateElement.textContent = '' + month + ' ' + day
+})
 
 setTimeout(function() {
     calculateCanvasDimensions()

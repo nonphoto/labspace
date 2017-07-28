@@ -15,24 +15,41 @@
     padding-right: @page-margin;
 
     .item-tag {
-        text-align: center;
-        width: 3 * @page-margin;
-        min-width: 6em;
+        display: none;
 
-        .circle {
-        font-size: 1em;
-        margin-bottom: 0.1em;
+        @media @phone-lg {
+            display: block;
+            text-align: center;
+            width: 3 * @page-margin;
+            min-width: 6em;
+
+            .circle {
+                font-size: 1em;
+                margin-bottom: 0.1em;
+            }
         }
     }
 
     .item-text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         position: relative;
         margin: 0;
         padding: 1.6em 0;
         width: 100%;
 
         h2 {
+            flex-shrink: 1;
             margin: 0;
+        }
+
+        span {
+            flex-shrink: 0;
+            display: block;
+            margin-left: 2rem;
+            width: 4rem;
+            height: 1em;
         }
 
         &::after {
