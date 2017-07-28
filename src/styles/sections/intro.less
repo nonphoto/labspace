@@ -1,0 +1,25 @@
+.intro-section {
+    .mixin-h1();
+
+    position: relative;
+    box-sizing: border-box;
+    padding: 2 * @page-margin;
+    padding-top: 2.5 * @page-margin;
+
+    @media @desktop-xxl {
+        padding: 100px;
+    }
+}
+
+#intro-text {
+    max-width: 14em;
+}
+
+#intro-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: @blue;
+    width: 100%;
+    height: 100%;
+}

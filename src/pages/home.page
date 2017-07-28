@@ -14,6 +14,7 @@
       </div>
       <div class="item-text">
         <h2>{title}</h2>
+        {startDate}
       </div>
     </div>
     {.end}
