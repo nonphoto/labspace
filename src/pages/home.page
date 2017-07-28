@@ -13,7 +13,7 @@
         {.end}
       </div>
       <div class="item-text">
-        <h2>{title}</h2>
+        <h2 data-rotate="hover">{title}</h2>
         <span data-date="{startDate}"></span>
       </div>
     </div>
@@ -24,11 +24,16 @@
 <section class="blog-section">
   <squarespace:query collection="blog" limit="10">
     {.repeated section items}
-    <div class="blog-item">
+    <div class="blog-item" data-rotate="both">
       <h2>{title}</h2>
       <div class="excerpt">{excerpt}</div>
-      <div class="author">{author.displayName} on <span data-date="{publishOn}"></span></div>
+      <div class="author">
+      {author.displayName} on <span data-date="{publishOn}"></span>
+      </div>
     </div>
     {.end}
+    <div class="more-posts" data-rotate="hover">
+      <h2>More Posts</h2>
+    </div>
   </squarespace:query>
 </section>

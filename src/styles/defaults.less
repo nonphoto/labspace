@@ -36,16 +36,14 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-top: 2 * @page-margin;
+	padding-top: @page-margin;
 	padding-bottom: @page-margin;
 	width: 100%;
-
-	@media @desktop-xxl {
-		padding-top: @page-margin;
-		padding-bottom: 0;
-	}
+	background-color: @light-gray;
+	margin-top: @page-margin;
 
 	a {
+		cursor: pointer;
 		padding: 1rem;
 	}
 
@@ -58,4 +56,12 @@ footer {
 			transform: scale(2);
 		}
 	}
+}
+
+.rotate-left {
+	transform: rotate(-3deg);
+}
+
+.rotate-right {
+	transform: rotate(3deg);
 }

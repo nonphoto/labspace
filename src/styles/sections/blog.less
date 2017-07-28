@@ -8,6 +8,7 @@
     }
 }
 
+.more-posts,
 .blog-item {
     display: flex;
     flex-direction: column;
@@ -18,8 +19,6 @@
     max-width: 100%;
     padding: 2.2rem;
 
-    background-color: @light-gray;
-
     @media @tablet {
         max-width: 50%;
     }
@@ -27,6 +26,41 @@
     @media @desktop {
         max-width: 33.33%;
     }
+}
+
+.more-posts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    // background-color: @light-gray;
+
+    h2 {
+        position: relative;
+        padding: 1rem 0;
+        margin: 0
+    }
+
+    h2::after {
+        content: '';
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: @line-width;
+        border-radius: @line-width / 2;
+        background-color: @black;
+
+        @media @phone-lg {
+            height: @line-width-large;
+            border-radius: @line-width-large / 2;
+        }
+    }
+}
+
+.blog-item {
+    cursor: pointer;
 
     h2 {
         margin: 0;
@@ -58,9 +92,7 @@
 
     &:nth-child(1) {
         background-color: @purple;
-        transform: rotate(0.04rad);
-
-        &:hover {}
+        z-index: 1;
 
         .excerpt::after {
         background: linear-gradient(transparent, @purple);
@@ -69,7 +101,7 @@
 
     &:nth-child(2) {
         background-color: @cyan;
-        transform: rotate(-0.07rad);
+        z-index: 2;
 
         .excerpt::after {
         background: linear-gradient(transparent, @cyan);
@@ -78,7 +110,7 @@
 
     &:nth-child(3) {
         background-color: @red;
-        transform: rotate(0.05rad);
+        z-index: 3;
 
         .excerpt::after {
         background: linear-gradient(transparent, @red);
@@ -87,7 +119,7 @@
 
     &:nth-child(4) {
         background-color: @yellow;
-        transform: rotate(-0.02rad);
+        z-index: 4;
 
         .excerpt::after {
         background: linear-gradient(transparent, @yellow);

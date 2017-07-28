@@ -109,6 +109,33 @@ dateElements.forEach(function(dateElement) {
     dateElement.textContent = '' + month + ' ' + day
 })
 
+const rotateElements = Array.from(document.querySelectorAll('[data-rotate]'))
+rotateElements.forEach(function(element) {
+    const type = element.dataset.rotate
+    element.style.transition = 'transform 100ms ease-out'
+
+    const direction = Math.random() <= 0.5 ? 'rotate-left' : 'rotate-right'
+
+    if (type === 'hover') {
+        element.addEventListener('mouseover', function() {
+            element.classList.add(direction)
+        })
+        element.addEventListener('mouseout', function() {
+            element.classList.remove(direction)
+        })
+    }
+
+    if (type === 'both') {
+        element.classList.add(direction)
+        element.addEventListener('mouseover', function() {
+            element.classList.remove(direction)
+        })
+        element.addEventListener('mouseout', function() {
+            element.classList.add(direction)
+        })
+    }
+})
+
 setTimeout(function() {
     calculateCanvasDimensions()
     start()
