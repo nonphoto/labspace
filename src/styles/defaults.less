@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 html {
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Roboto', sans-serif;
 
-  @media @phone-lg {
+  @media @phone-md {
     font-size: 18px;
+  }
+
+  @media @phone-lg {
+    font-size: 20px;
   }
 
   @media @tablet-lg {
@@ -42,7 +46,6 @@ h2 {
 
 #intro-text {
   max-width: 14em;
-  // margin: auto;
 }
 
 #intro-canvas {
@@ -56,8 +59,6 @@ h2 {
 
 .event-section,
 .blog-section {
-  margin: (2 * @page-margin) 0;
-
   p {
     .mixin-p();
   }
@@ -65,7 +66,8 @@ h2 {
 
 .event-section {
   display: flex;
-  flex-direction: column-reverse
+  flex-direction: column-reverse;
+  margin: (2 * @page-margin) 0;
 }
 
 .event-item {
@@ -80,7 +82,7 @@ h2 {
     min-width: 6em;
 
     .circle {
-      font-size: 0.8em;
+      font-size: 1em;
       margin-bottom: 0.1em;
     }
   }
@@ -115,6 +117,90 @@ h2 {
 
   &:first-of-type .item-text::after {
     display: none;
+  }
+}
+
+.blog-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blog-item {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  width: 20rem;
+  height: 20rem;
+  max-width: 100%;
+  padding: 2rem;
+
+  background-color: @light-gray;
+
+  @media @phone-lg {
+    max-width: 50%;
+  }
+
+  @media @tablet-lg {
+    max-width: 33.33%;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    position: relative;
+    margin-top: 1.6em;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &::after{
+      content:'';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 5em;
+      width: 100%;
+    }
+  }
+
+  &:nth-child(1) {
+    background-color: @purple;
+    transform: rotate(0.04rad);
+
+    p::after {
+      background: linear-gradient(transparent, @purple);
+    }
+  }
+
+  &:nth-child(2) {
+    background-color: @cyan;
+    transform: rotate(-0.07rad);
+
+    p::after {
+      background: linear-gradient(transparent, @cyan);
+    }
+  }
+
+  &:nth-child(3) {
+    background-color: @red;
+    transform: rotate(0.05rad);
+
+    p::after {
+      background: linear-gradient(transparent, @red);
+    }
+  }
+
+  &:nth-child(4) {
+    background-color: @yellow;
+    transform: rotate(-0.02rad);
+
+    p::after {
+      background: linear-gradient(transparent, @yellow);
+    }
   }
 }
 

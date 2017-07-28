@@ -1,6 +1,6 @@
 <section class="intro-section">
   <canvas id="intro-canvas"></canvas>
-  <squarespace:block-field id="intro-text" columns="12"/>
+  <squarespace:block-field id="intro-text" columns="4"/>
 </section>
 
 <section class="event-section">
@@ -25,7 +25,7 @@
     {.repeated section items}
     <div class="blog-item">
       <h2>{title}</h2>
-      <p>{excerpt}</p>
+      {excerpt}
     </div>
     {.end}
   </squarespace:query>
