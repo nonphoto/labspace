@@ -13,7 +13,8 @@
     "scripts": "webpack --config webpack.config.js",
     "scripts:watch": "npm run scripts -- --watch",
     "server": "squarespace runserver --auth --directory=$npm_package_config_destination_dir",
-    "watch": "npm-run-all --parallel *:watch"
+    "watch": "npm-run-all --parallel *:watch",
+    "deploy": "./bin/deploy.sh"
   },
   "repository": {
     "type": "git",
