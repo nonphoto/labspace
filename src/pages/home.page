@@ -1,6 +1,6 @@
 <section class="intro-section">
   <canvas id="intro-canvas"></canvas>
-  <squarespace:block-field id="intro-text" columns="4"/>
+  <squarespace:block-field id="intro-text" columns="1"/>
 </section>
 
 <section class="event-section">
