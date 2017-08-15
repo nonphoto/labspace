@@ -1,7 +1,7 @@
 .event-section {
     display: flex;
     flex-direction: column-reverse;
-    margin: (2 * @page-margin) 0;
+    margin: @spacing-2 0;
 
     p {
         .mixin-p();
@@ -12,7 +12,7 @@
     overflow: visible;
     display: flex;
     align-items: center;
-    padding-right: @page-margin;
+    padding-right: @spacing;
 
     .item-tag {
         display: none;
@@ -20,7 +20,7 @@
         @media @phone-lg {
             display: block;
             text-align: center;
-            width: 3 * @page-margin;
+            width: @spacing-3;
             min-width: 6em;
 
             .circle {
