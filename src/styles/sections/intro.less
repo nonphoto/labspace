@@ -2,16 +2,23 @@
     .mixin-h1();
 
     position: relative;
-    box-sizing: border-box;
-    padding: @spacing-2;
-
-    @media @desktop-xxl {
-        padding: 100px;
-    }
 }
 
 #intro-text {
+    position: relative;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    z-index: 1;
     max-width: 14em;
+
+    padding: @spacing-3;
+    padding-right: @spacing-2;
+    margin: 0;
+
+    @media @desktop-xxl {
+        padding: 2em;
+    }
 }
 
 #intro-canvas {

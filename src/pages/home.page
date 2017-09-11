@@ -1,6 +1,8 @@
 <section class="intro-section">
   <canvas id="intro-canvas"></canvas>
-  <squarespace:block-field id="intro-text" columns="1"/>
+  <p id="intro-text">
+    LABSPACE is a group to discuss, learn and build technology-based creative projects and artworks. Join us Wednesdays at 6:00 PM.
+  </p>
 </section>
 
 <section class="event-section">
