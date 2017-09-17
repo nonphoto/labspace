@@ -10,13 +10,15 @@
     {.repeated section items}
     <div class="event-item">
       <div class="item-tag">
-        {.equal?:@index:2}Next Up{.or}
-        <span class="circle">●</span>
+        {.equal?:@index:2}
+          Next Up
+        {.or}
+          <span class="circle">●</span>
         {.end}
       </div>
       <div class="item-text">
-        <h2 data-rotate="hover">{title}</h2>
-        <span data-date="{startDate}"></span>
+        <h2>{title}</h2>
+        <span data-date="{startDate}">Soon</span>
       </div>
     </div>
     {.end}
@@ -24,9 +26,9 @@
 </section>
 
 <section class="blog-section">
-  <squarespace:query collection="blog" limit="10">
+  <squarespace:query collection="blog" limit="20">
     {.repeated section items}
-    <div class="blog-item" data-rotate="both">
+    <div class="blog-item">
       <h2>{title}</h2>
       <div class="excerpt">{excerpt}</div>
       <div class="author">
@@ -34,7 +36,7 @@
       </div>
     </div>
     {.end}
-    <div class="more-posts" data-rotate="hover">
+    <div class="more-posts">
       <h2>More Posts</h2>
     </div>
   </squarespace:query>
