@@ -12,7 +12,6 @@
     overflow: visible;
     display: flex;
     align-items: center;
-    padding-right: @spacing;
 
     .item-tag {
         display: none;
@@ -45,12 +44,18 @@
             margin: 0;
         }
 
-        span {
+        .date {
+            text-align: right;
             flex-shrink: 0;
-            display: block;
+            display: flex;
+            justify-content: space-between;
             margin-left: 2rem;
-            width: 4rem;
+            width: 6ch;
             height: 1em;
+        }
+
+        .date-placeholder {
+            margin-left: auto;
         }
 
         &::after {

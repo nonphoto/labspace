@@ -18,7 +18,9 @@
       </div>
       <div class="item-text">
         <h2>{title}</h2>
-        <span data-date="{startDate}">Soon</span>
+        <span class="date" data-date="{startDate}">
+          <span class="date-placeholder">Soon</span>
+        </span>
       </div>
     </div>
     {.end}

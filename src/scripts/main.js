@@ -104,9 +104,11 @@ window.addEventListener('resize', _.debounce(handleResizeEnd, 500))
 const dateElements = Array.from(document.querySelectorAll('[data-date]'))
 dateElements.forEach(function(dateElement) {
     const date = new Date(Number(dateElement.dataset.date))
-    const day = date.getDate();
-    const month = months[date.getMonth()];
-    dateElement.textContent = '' + month + ' ' + day
+    const day = '0' + date.getDate()
+    const formattedDay = day.substring(day.length - 2)
+    const month = months[date.getMonth()]
+
+    dateElement.innerHTML = `<span class="month">${month}</span><span class="day">${formattedDay}</span>`
 })
 
 const rotateElements = Array.from(document.querySelectorAll('[data-rotate]'))
