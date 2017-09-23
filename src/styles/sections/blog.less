@@ -6,6 +6,10 @@
     p {
         .mixin-p();
     }
+
+    .month {
+        margin-right: 0.5ch;
+    }
 }
 
 .more-posts,
@@ -33,7 +37,6 @@
     justify-content: center;
     align-items: center;
     height: auto;
-    // background-color: @light-gray;
 
     h2 {
         position: relative;
@@ -95,7 +98,7 @@
         z-index: 1;
 
         .excerpt::after {
-        background: linear-gradient(transparent, @purple);
+            background: linear-gradient(transparent, @purple);
         }
     }
 
@@ -104,7 +107,7 @@
         z-index: 2;
 
         .excerpt::after {
-        background: linear-gradient(transparent, @cyan);
+            background: linear-gradient(transparent, @cyan);
         }
     }
 
@@ -113,7 +116,7 @@
         z-index: 3;
 
         .excerpt::after {
-        background: linear-gradient(transparent, @red);
+            background: linear-gradient(transparent, @red);
         }
     }
 
@@ -122,7 +125,7 @@
         z-index: 4;
 
         .excerpt::after {
-        background: linear-gradient(transparent, @yellow);
+            background: linear-gradient(transparent, @yellow);
         }
     }
 }

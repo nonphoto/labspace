@@ -11,7 +11,7 @@
     <div class="event-item">
       <div class="item-tag">
         {.equal?:@index:2}
-          Next Up
+          <span class="next">Next</span>
         {.or}
           <span class="circle">●</span>
         {.end}

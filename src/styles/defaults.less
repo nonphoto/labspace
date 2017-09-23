@@ -21,16 +21,20 @@ body {
 	background-color: @white;
 	color: @black;
 	padding: @spacing;
-	margin: auto;
-	max-width: 1440px;
 }
 
-h1 {
+h1,
+.h1 {
 	.mixin-h1();
 }
 
-h2 {
+h2,
+.h2 {
 	.mixin-h2();
+}
+
+.p {
+	.mixin-p();
 }
 
 footer {
@@ -38,8 +42,6 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-top: @spacing;
-	padding-bottom: @spacing;
 	width: 100%;
 	background-color: @light-gray;
 	margin-top: @spacing;
@@ -47,16 +49,6 @@ footer {
 	a {
 		cursor: pointer;
 		padding: 1rem;
-	}
-
-	svg {
-		@media @phone-md {
-			transform: scale(1.6);
-		}
-
-		@media @tablet {
-			transform: scale(2);
-		}
 	}
 }
 
@@ -66,4 +58,8 @@ footer {
 
 .rotate-right {
 	transform: rotate(3deg);
+}
+
+.date-placeholder {
+	margin-left: auto;
 }
