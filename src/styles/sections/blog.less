@@ -1,34 +1,36 @@
 .blog-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    p {
-        .mixin-p();
-    }
+    column-count: 1;
+    column-width: auto;
+    column-gap: @spacing;
 
     .month {
         margin-right: 0.5ch;
+    }
+
+    @media @phone-lg {
+        column-count: 2;
+    }
+
+    @media @tablet-lg {
+        column-count: 3;
+    }
+
+    @media @desktop-lg {
+        column-count: 4;
     }
 }
 
 .more-posts,
 .blog-item {
-    display: flex;
-    flex-direction: column;
+    break-inside: avoid;
     box-sizing: border-box;
-
-    width: 20rem;
-    height: 20rem;
     max-width: 100%;
-    padding: 2.2rem;
+    background-color: @light-gray;
+    padding: @spacing-2;
+    margin-bottom: @spacing;
 
-    @media @tablet {
-        max-width: 50%;
-    }
-
-    @media @desktop {
-        max-width: 33.33%;
+    @media @tablet-lg {
+        padding: 2rem;
     }
 }
 
@@ -78,54 +80,9 @@
         p {
             margin: 0;
         }
-
-        &::after{
-            content:'';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 6rem;
-            width: 100%;
-        }
     }
 
     .author {
         margin-top: auto;
-    }
-
-    &:nth-child(1) {
-        background-color: @purple;
-        z-index: 1;
-
-        .excerpt::after {
-            background: linear-gradient(transparent, @purple);
-        }
-    }
-
-    &:nth-child(2) {
-        background-color: @cyan;
-        z-index: 2;
-
-        .excerpt::after {
-            background: linear-gradient(transparent, @cyan);
-        }
-    }
-
-    &:nth-child(3) {
-        background-color: @red;
-        z-index: 3;
-
-        .excerpt::after {
-            background: linear-gradient(transparent, @red);
-        }
-    }
-
-    &:nth-child(4) {
-        background-color: @yellow;
-        z-index: 4;
-
-        .excerpt::after {
-            background: linear-gradient(transparent, @yellow);
-        }
     }
 }
