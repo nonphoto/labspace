@@ -2,10 +2,6 @@
     display: flex;
     flex-direction: column-reverse;
     margin: @spacing-2 0;
-
-    p {
-        .mixin-p();
-    }
 }
 
 .event-item {
@@ -15,17 +11,22 @@
 
     .item-tag {
         display: none;
+        flex-grow: 0;
+        flex-shrink: 0;
 
         @media @phone-lg {
             display: block;
             text-align: center;
-            width: @spacing-3;
-            min-width: 6em;
+            width: 4rem;
+        }
 
-            .circle {
-                font-size: 1em;
-                margin-bottom: 0.1em;
-            }
+        @media @tablet-lg {
+            width: 6rem;
+        }
+
+        .circle {
+            font-size: 1em;
+            margin-bottom: 0.1em;
         }
     }
 
@@ -34,12 +35,16 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
+        flex-grow: 1;
         margin: 0;
         padding: 1.2rem 0;
-        width: 100%;
+        width: 1rem;
 
         h2 {
             cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             flex-shrink: 1;
             margin: 0;
         }
@@ -49,7 +54,7 @@
             flex-shrink: 0;
             display: flex;
             justify-content: space-between;
-            margin-left: 2rem;
+            margin-left: @spacing-2;
             width: 6ch;
             height: 1em;
         }
