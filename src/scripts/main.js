@@ -1,6 +1,8 @@
 import physics from '@nonphoto/physics'
 import _ from 'lodash'
 
+import MasonryLayout from './masonry-layout'
+
 const months = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
@@ -138,7 +140,11 @@ rotateElements.forEach(function(element) {
     }
 })
 
+const blogContainer = document.getElementsByClassName('blog-section')[0]
+const masonryLayout = new MasonryLayout(blogContainer)
+
 setTimeout(function() {
+    masonryLayout.pack()
     calculateCanvasDimensions()
     start()
 }, 1000)
