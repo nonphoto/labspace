@@ -1,7 +1,11 @@
 .event-section {
     display: flex;
     flex-direction: column-reverse;
-    margin: @spacing-2 0;
+    margin: @spacing-2;
+
+    @media @phone-lg {
+        margin-left: 0;
+    }
 }
 
 .event-item {
